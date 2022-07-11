@@ -52,8 +52,27 @@ The instruction “ret10” is the end the VirtualAlloc function. So set the bre
 
 <img width="684" alt="emo6" src="https://user-images.githubusercontent.com/107531426/178325023-f1c39b9f-0877-41e5-863a-d9eb372d76c8.PNG">
 
+So our breakpoint is at Entrypoint of the sample and End of VirtualAlloc Function
 
+<img width="794" alt="emo7" src="https://user-images.githubusercontent.com/107531426/178327510-c4a13c02-9656-486d-b93e-be9bd44e7bbe.PNG">
 
+Now go to the entrypoint of sample (Shift+8) and Run the Malware (F9). You’ll be at return value of 
+Memory where malware is Unpacking itself. 
 
+<img width="942" alt="emo8" src="https://user-images.githubusercontent.com/107531426/178327657-46f34fb7-6557-4236-bcb4-4f8eb13ab15c.PNG">
 
+Now do step over (F7). It will take you to the value where allocated memory is being used to move 
+the unpacked malware into. (esp+28)
+
+Above this instruction (CALL EDI) and right side (EDI). You’ll see memory is being stored in EDI 
+register.
+
+<img width="956" alt="emo9" src="https://user-images.githubusercontent.com/107531426/178328066-2bed4926-a8a2-4293-9762-119d5a34ae32.PNG">
+
+Right click on the Value (esp+28) and do follow in dump and choose select address.
+
+We need to find Header of the Sample in Dump. The Header of Windows Executables starts with MZ 
+(4D 5A). Here we can see MZ is not present in the dump.
+
+<img width="956" alt="emo10" src="https://user-images.githubusercontent.com/107531426/178328272-10a77520-f546-457d-ab3b-2fc47fd6765b.PNG">
 
