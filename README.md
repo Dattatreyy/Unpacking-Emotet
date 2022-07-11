@@ -76,3 +76,33 @@ We need to find Header of the Sample in Dump. The Header of Windows Executables 
 
 <img width="956" alt="emo10" src="https://user-images.githubusercontent.com/107531426/178328272-10a77520-f546-457d-ab3b-2fc47fd6765b.PNG">
 
+Again we need to Run the Malware, then step over. You will get New Value (edi+54)
+
+<img width="952" alt="emo11" src="https://user-images.githubusercontent.com/107531426/178328629-000dadba-05c3-45e9-946e-97d51e7b1b83.PNG">
+
+Do Follow in dump to selected address. In Dump you can see the Header of the Execuatble. That’s 
+your Unpacked Malware. Check also for String “ This program cannot run on DOS mode”
+
+<img width="947" alt="emo12" src="https://user-images.githubusercontent.com/107531426/178329434-5f35383c-0eba-4752-b9eb-f658ddc43395.PNG">
+
+Right Click on MZ and select Follow in Memory Map. Check protection ERW, this means Executable, 
+Read, Write. That’s what Malware is doing in memory- ERW
+
+<img width="956" alt="emo13" src="https://user-images.githubusercontent.com/107531426/178329576-0a62672c-4761-4b1d-b373-b85e1d3b9a33.PNG">
+
+Right click on that address and select Dump memory to file.
+
+Select location where do you want to save your unpacked binary.
+
+![emo14](https://user-images.githubusercontent.com/107531426/178329767-79d03a4b-cdfc-466d-831e-d78aeae89385.png)
+
+Open that in Hex Editor. Delete all unnecessary binary before Header.
+
+![emo15](https://user-images.githubusercontent.com/107531426/178330053-d4da75ab-487e-47e8-800d-c3c430ca1acd.png)
+
+<img width="805" alt="emo16" src="https://user-images.githubusercontent.com/107531426/178330200-a1d8e0f5-95f8-4a25-aef8-758545fff45b.PNG">
+
+Save this unpacked binary. And start working………….
+
+<img width="815" alt="emo17" src="https://user-images.githubusercontent.com/107531426/178330287-4ff531fa-542d-4bf2-a273-d006de69aa55.PNG">
+
