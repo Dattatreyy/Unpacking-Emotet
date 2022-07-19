@@ -25,11 +25,11 @@ means Malware is performing Process Injection.
 
 This sample is Emotet. 
 
-Load the sample into x32dbg and Run the Sample (F9)
+Load the sample in debugger and Run the Sample
 
 <img width="953" alt="emo1" src="https://user-images.githubusercontent.com/107531426/178323047-15b6e09e-ede3-43e9-a833-0b350ff04bba.PNG">
 
-We’re now at Entrypoint of our Sample. Hit the BreakPoint (F2), from here we’ll start our analysis.
+We’re now at Entrypoint of our Sample. Hit the BreakPoint, from here we’ll start our analysis.
 
 <img width="960" alt="emo2" src="https://user-images.githubusercontent.com/107531426/178323293-6eddf88f-5f48-40c9-b1fb-41e8706d2d98.PNG">
 
@@ -56,12 +56,12 @@ So our breakpoint is at Entrypoint of the sample and End of VirtualAlloc Functio
 
 <img width="794" alt="emo7" src="https://user-images.githubusercontent.com/107531426/178327510-c4a13c02-9656-486d-b93e-be9bd44e7bbe.PNG">
 
-Now go to the entrypoint of sample (Shift+8) and Run the Malware (F9). You’ll be at return value of 
+Now go to the entrypoint of sample and Run the Malware. You’ll be at return value of 
 Memory where malware is Unpacking itself. 
 
 <img width="942" alt="emo8" src="https://user-images.githubusercontent.com/107531426/178327657-46f34fb7-6557-4236-bcb4-4f8eb13ab15c.PNG">
 
-Now do step over (F7). It will take you to the value where allocated memory is being used to move 
+Now do step over. It will take you to the value where allocated memory is being used to move 
 the unpacked malware into. (esp+28)
 
 Above this instruction (CALL EDI) and right side (EDI). You’ll see memory is being stored in EDI 
@@ -102,7 +102,7 @@ Open that in Hex Editor. Delete all unnecessary binary before Header.
 
 <img width="805" alt="emo16" src="https://user-images.githubusercontent.com/107531426/178330200-a1d8e0f5-95f8-4a25-aef8-758545fff45b.PNG">
 
-Save this unpacked binary. And start working………….
+Save this unpacked binary.
 
 <img width="815" alt="emo17" src="https://user-images.githubusercontent.com/107531426/178330287-4ff531fa-542d-4bf2-a273-d006de69aa55.PNG">
 
